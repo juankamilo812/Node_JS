@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <h1>app js</h1>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+
+</body>
+
+<script>
+
+    // palabra resrvada infinity
+    var x = 2 / 0;
+    document.getElementById("demo").innerHTML = "la divicion por 0 devuelve un <b> <i>" + x + "</b>" + "</i>";
+
+    //typeof Infinitydevuelve number.
+    var x = Infinity;
+    document.getElementById("demo1").innerHTML = "El tipo de dato con la palabra resrvada es Infinity es <b> <i>" + typeof x + "</i> </b>";
+
+    //javaScript interpreta las constantes numéricas como hexadecimales si están precedidas por 0x.
+    var x = 0xFe;
+    document.getElementById("demo2").innerHTML = "hexadecimal 0xFF = <b> <i>" + x + "<b>" + "</i>";
+
+    //Los números pueden ser objetos
+    var x = 123;
+    var y = new Number(123);
+    document.getElementById("demo3").innerHTML = "El tipo de dato es <b>" + typeof x + "</b>" + "<br>" + "El tipo de dato es <b> " + typeof y + "</b>";
+
+    // JavaScript Global Methods
+
+    document.getElementById("demo4").innerHTML =
+        "el metodo Number para la variable TRUE es <b>" + Number(true) + "</b>" + "<br>" +
+        "el metodo Number para la variable FALSE es  <b>" + Number(false) + "</b>" + "<br>" +
+        "el metodo Number es <b>" + Number("10") + "</b>";
+
+    //El método del número () utilizado en las fechas
+
+    var x = new Date("2017-09-30");
+    document.getElementById("demo5").innerHTML = "Convertir la fecha 2017-09-30 en un número <b>" + Number(x);
+
+    //El método parseInt ()
+    //analiza una cadena y devuelve un número entero. Se permiten espacios. Sólo se devuelve el primer número
+
+    document.getElementById("demo6").innerHTML = "El numero 366.36477 con el metodo parseFloat devuelve el decimal: <b>" + parseFloat("366.36477") + "</b>"
+        + "<br>" + "El numero 16 hola con el metodo parseInt devuelve el entero: <b>" + parseInt("16 hola") + "</b>" + "<br>" +
+        "El numero 14 hola devuelve el entero: <b>" + parseInt("hola 45") + "</b>"
+
+    //  MIN_VALUE y MAX_VALUE
+    //devuelve el mayor número posible en JavaScript.
+
+    var x = Number.MAX_VALUE;
+    var z = Number.MIN_VALUE;
+    document.getElementById("demo7").innerHTML = "el mayor número posible en JavaScript es <b>" + x + "</b>" + "<br>" +
+        "el Menor número posible en JavaScript es <b>" + z + "</b>";
+
+    //POSITIVE_INFINITY and NEGATIVE_INFINITY
+    //se devuelve en el desbordamiento:
+
+    var x = Number.POSITIVE_INFINITY;
+    var z = Number.NEGATIVE_INFINITY;
+    document.getElementById("demo8").innerHTML = "La propiedad POSITIVE_INFINITY devuelve <b> " + x + "</B>" +
+        "<br>" + "La propiedad NEGATIVE_INFINITY devuelve <b> " + z + "</B>";
+
+//Las propiedades de los números no se pueden usar en variable
+var x = 6;
+document.getElementById("demo9").innerHTML = "El uso de una variable con la propiedad MAX_VALUE,  devolverá <b>" + x.MAX_VALUE + "</b>";
+
+</script>
+
+</html>

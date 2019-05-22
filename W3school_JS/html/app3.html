@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <h1>My First JavaScript</h1>
+
+
+    <p id="matrices"> </p>
+    <p id="objeto"> </p>
+    <p id="typeof"> </p>
+    <p id="null"> </p>
+    <p id="funciones"> </p>
+    <p id="funciones1"> </p>
+    <p id="funciones2"> </p>
+    <p id="metodo"> </p>
+    <p id="modifica_texto"> </p>
+    <p id="fecha_actual"> </p>
+    <p id="myfuntion_2"> </p>
+    <p id="funciones3"> </p>
+    <p id="test"></p>
+
+    <div>
+        <button onclick="document.getElementById('modifica_texto').innerHTML='Try JavaScript'">modifica_texto</button>
+        <button onclick="document.getElementById('fecha_actual').innerHTML=Date()">fecha_actual</button>
+        <button onclick="myfuntion()">funciones</button>
+    </div>
+</body>
+
+<script>
+    //DECLARAR MATRICES
+    var cars = ["Mazda", "Renold", "audi"];
+    document.getElementById("matrices").innerHTML = "la poscision de la matriz 0 es " + cars[0];
+
+    //DECLARAR OBJETOS
+    var person = {
+        Nombre: "Juan Camilo",
+        Apellido: "Garcia",
+        Edad: 30
+    };
+    document.getElementById("objeto").innerHTML = "El objeto indica que" + " " + person.Nombre + " " + person.Apellido + " " + "tiene" + " " + person.Edad + " " + "años de edad";
+
+    // METODOS
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+    document.getElementById("metodo").innerHTML = "El nombre completo es " + person.fullName();
+
+    // TIPOS DE DATOS
+    document.getElementById("typeof").innerHTML =
+        typeof 0 + "<br>" +
+        person + "<br>" +
+        typeof undefined + "<br>" +
+        typeof null + "<br>" +
+        typeof "hola" + "<br>" +
+        typeof function myFunc() { } + "<br>" +
+        typeof true;
+
+
+    var colores = { nombre1: "azul", nombre2: "rojo", nombre3: "verde" };
+    document.getElementById("null").innerHTML = "El tipo de dato  es " + colores.nombre2;
+
+    // FUNCIONES DE RETORNO
+
+    function fjs(d1, d2) {
+        return d1 * d2;
+    }
+    document.getElementById("funciones").innerHTML = "la funcion es " + fjs(4, 2);
+
+    //---
+
+    var x = funcionprueba(10, 12);
+    document.getElementById("funciones1").innerHTML = "la funcion es " + x;
+    function funcionprueba(parametro1, parametro2) {
+        return parametro1 + parametro2;
+    }
+    //---
+    function pr(t) {
+        return (t + 40);
+    }
+    document.getElementById("funciones2").innerHTML = "El operador es " + pr(5)
+
+    //funciones
+
+    function myfuntion() {
+        var parameter_1 = "39",
+            Parameter_2 = "hola",
+            Parameter_3 = "152";
+        document.getElementById("funciones3").innerHTML = "la funcion de Elizabeth es el  " + Parameter_2;
+    }
+
+    myfuntion_2()
+
+    function myfuntion_2() {
+        var parameter_1 = "Mazda",
+            Parameter_2 = "renold",
+            Parameter_3 = "audi";
+        document.getElementById("myfuntion_2").innerHTML = "la marca es " + Parameter_3;
+
+    }
+
+    //propiedad length
+
+    var caracteres = "123lkmnop";
+    document.getElementById("test").innerHTML = caracteres.length;
+
+</script>
+
+</html>

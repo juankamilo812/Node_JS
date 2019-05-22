@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+
+    <h1>app 4</h1>
+    <p id="test"> </p>
+    <p id="test2"> </p>
+    <p id="test3"> </p>
+    <p id="test4"> </p>
+    <p id="test5"> </p>
+    <p id="test6"></p>
+    <p id="test7"></p>
+    <p id="test8"></p>
+    <p id="test9"></p>
+    <p id="test10"></p>
+    <p id="test11">El método reemplaza el valor a buscar</p>
+    <p id="test12">Convertir a mayúsculas y minúsculas</p>
+    <p id="test13"></p>
+    <p id="test14"></p>
+    <p id="test15"></p>
+    <p id="test16"></p>
+    <p id="test17"></p>
+
+</body>
+<div>
+    <button onclick="Reemplazo ()">No Presionar</button> <br>
+    <br>
+    <button onclick="convertir()">Presionar</button><br>
+    <br>
+    <button onclick="esp()">push</button><br>
+    <br>
+    <button onclick="lot()">Ingresar</button><br>
+</div>
+
+
+<script>
+
+    //js cuerdas dividir una linea
+    document.getElementById("test").innerHTML = "Dividir \
+linea!";
+
+    // romper cadenas
+    document.getElementById("test2").innerHTML = "Romper " +
+        "Cadena";
+
+    //Las cuerdas pueden ser objetos
+
+    var x = "Nombre";
+    var y = new String("nombre");
+    document.getElementById("test3").innerHTML = "El tipo de datos es " + typeof x + "<br>" +
+        "El tipo de datos es un " + typeof y;
+
+
+    //Romper líneas de código largas
+
+    document.getElementById("test5").innerHTML =
+        "Romper líneas de código largas!";
+
+
+    //Métodos de cadena de JavaScript indexOf 
+    var x = "Encontrar una cadena";
+    var z = x.indexOf("cadena", 5);
+    document.getElementById("test6").innerHTML = "La variable x tiene " +
+        x.length + " caracteres " + " mientras que la variable z su pocision es " + z;
+
+    // Metodo search
+
+    var x = "Buscando una cadena en una cadena";
+    var z = x.search("cadena");
+    document.getElementById("test7").innerHTML = "El metodo de cadena es " + z;
+
+    // El método slice () 
+    // Si un parámetro es negativo, la posición se cuenta desde el final de la cadena. 
+    //Si omite el segundo parámetro, el método cortará el resto de la cadena:
+
+    var met = "El metodo slice divide";
+    var test = met.slice(16,21);
+    document.getElementById("test8").innerHTML = "Extrae una parte de una cadena y devuelve el valor llamado <b>" + test +"</b>";
+
+    //El método subcadena ()
+
+    var sub = "La diferencia es que substring no se pueden aceptar índices negativos.";
+    var subs = sub.substring(3, 13);
+    document.getElementById("test9").innerHTML = "El substring es " + subs;
+
+    //El método substr ()
+    //Si omite el segundo parámetro, substr()se cortará el resto de la cadena
+    //Si el primer parámetro es negativo, la posición cuenta desde el final de la cadena.
+
+    var ab = "La diferencia es que el segundo parámetro especifica la longitud de la parte extraída";
+    var abc = ab.substr(3, 10);
+    document.getElementById("test10").innerHTML = "El substr es " + abc;
+
+    //El método replace ()
+    //La función reemplaza solo la primera coincidencia:
+    //No distingue entre mayúsculas y minúsculas
+
+    //Tenga en cuenta que las expresiones regulares se escriben sin comillas.
+    //Para reemplazar mayúsculas y minúsculas, use una expresión regular con una /i
+    //Para reemplazar todas las coincidencias, use una expresión regular con una /g
+
+    function Reemplazo() {
+        var rpl = document.getElementById("test11").innerHTML;
+        var rpl2 = rpl.replace("valor a buscar", "valor a reemplazar");
+        document.getElementById("test11").innerHTML = rpl2;
+
+    }
+
+    //metodo toUpperCase() Convertir a mayúsculas toLowerCase() minúscula
+
+    function convertir() {
+        var mayuscula = document.getElementById("test12").innerHTML;
+        document.getElementById("test12").innerHTML = mayuscula.toUpperCase();
+    }
+
+    // método concat () une dos o más cadenas:
+
+    var param1 = "hola";
+    var param2 = "Mundo";
+    var param3 = param1.concat(" ", param2);
+    document.getElementById("test13").innerHTML = param3;
+
+    //trim()método elimina los espacios en blanco de ambos lados de una cadena:
+
+    function esp() {
+        var str = "     Hello World!     ";
+        alert(str.trim());
+    }
+
+    // El método charAt () devuelve el carácter en un índice (posición) específico en una cadena:
+
+
+    var car = "posiCión";
+    document.getElementById("test15").innerHTML = "El metodo devuelve el código Unicode <b>" + car.charAt(4) + "</b>";
+
+
+    //El charCodeAt()método devuelve el código Unicode del carácter en un índice especificado en una cadena:Caracteres ASCII
+
+    var car = "posiCión";
+    document.getElementById("test16").innerHTML = "El metodo devuelve la letra p, en código ASCII <b>" + car.charCodeAt(1) + "</b>";
+
+
+    //  split()método: convertir una cadena en una matriz
+
+    function lot() {
+        var pru = "a,c,d,e,p";
+        var lmy = pru.split(",");
+        document.getElementById("test17").innerHTML = "La matriz esta en la pocision " + lmy[0];
+    }
+
+
+</script>
+
+</html>

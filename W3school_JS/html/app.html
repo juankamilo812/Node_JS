@@ -1,0 +1,105 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+
+<body style="background-color:white;">
+    <h2>My First JavaScript</h2>
+    <br>
+    <button onclick="on()">Prender</button>
+    <img id="myImage" src="pic_bulboff.gif" style="width:50px">
+    <button onclick="off()">apagar</button>
+    <br>
+    <p id="content">Test content</p>
+    <p id="tamaño">Test style</p>
+    <p id="Ocultar">Test elements.</p>
+    <p id="mostrar" style="display:none">Muestra elementos!</p>
+    <p id="Etqueta scrip"></p>
+    <p id="head">JavaScript in Head.</p>
+    <p id="external">Try external.</p>
+    <p id="demo"></p>
+    <p id="dcl"></p>
+    <p id="djs"></p>
+    <p id="bloques"></p>
+    <p id="bloques2"></p>
+    <p id="operators"></p>
+    <p id="Expresion"></p>
+    <p id="identificadores"></p>
+
+    <div>
+        <button type="button" onclick="document.getElementById('content').innerHTML = 'Try JavaScript!'">Cambiarcontenido!</button>
+
+        <button type="button" onclick="document.getElementById('tamaño').style.fontSize='40px '">Tamaño de letra!</button>
+
+        <button type="button" onclick="document.getElementById('Ocultar').style.display='none'">Ocultar Elementos!</button>
+
+        <button type="button" onclick="document.getElementById('mostrar').style.display='block'">Mostra elementos!</button>
+
+        <button type="button" onclick="mihead()">java_scrip_head</button>
+
+        <button type="button" onclick="External()">external</button>
+
+        <button type="button" onclick="document.write(30 + 6)">document.write pruebas</button>
+
+        <button type="button" onclick="myfuntion()">Bloques de codigo</button>
+
+</body>
+
+<script>
+    function on() {
+        document.getElementById('myImage').src = 'pic_bulbon.gif';
+    }
+    function off() {
+        document.getElementById('myImage').src = 'pic_bulboff.gif';
+    }
+
+    document.getElementById("Etqueta scrip").innerHTML = "Prueba Etiqueta scrip";
+
+    function mihead() {
+        document.getElementById('head').innerHTML = 'javascrip Head';
+
+    }
+
+    document.getElementById("demo").innerHTML = 10 + 10;
+
+    //window.alert (10+5);
+
+    console.log(15 + 19);
+
+    var x, y, k;
+    x = 20;
+    y = 30;
+    k = x + y;
+
+
+    document.getElementById("dcl").innerHTML = "El resultado es" + " " + k + ".";
+
+    document.getElementById("djs").innerHTML = "prueba declaraciones";
+
+    function myfuntion() {
+        document.getElementById("bloques").innerHTML = "Test bloques de codigo"
+        document.getElementById("bloques2").innerHTML = "Test bloques de codigo_2"
+
+    }
+
+    document.getElementById("operators").innerHTML = "El resultado de la operacion es" + " " + (2 + 6) * 2;
+
+    var x;
+    x = 5;
+    document.getElementById("Expresion").innerHTML = "JavaScript Expressions es igual a" + " " + x * 5;
+
+
+var Id;
+Id = "bloques2";
+document.getElementById(Id).innerHTML = "Prueba"
+
+</script>
+
+<script src="index.js"></script>
+
+
+</html>

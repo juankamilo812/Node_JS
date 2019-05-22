@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+
+</head>
+
+<body>
+    <h1>app js_6</h1>
+    <ul>
+        <li>Parametro1</li>
+        <li>Parametro2</li>
+        <li>Parametro3</li>
+    </ul>
+
+    <p id="demo0"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <div>
+        <button onclick="array()">Try it</button> <br>
+        </br>
+        <button onclick="myfunction()">Entrar</button> <br>
+        </br>
+        <button onclick="elto()">Ingresar</button>
+
+    </div>
+
+</body>
+
+
+<script type="text/javascript" src="Arrays.js">
+    //Creando un Array
+    var cars = ["Mazda", "Renold", "Audi"];
+    document.getElementById("demo0").innerHTML = "La array ubicada en la posicion 1 es <b>" + cars[1] + "</b>";
+
+    var animales = [
+        "Vaca",
+        "lobo",
+        "Conejo"
+    ];
+
+    document.getElementById("demo1").innerHTML = "La array ubicada en la posicion 2 es <b>" + animales[2] + "</b>";
+
+
+    //Cambiar un elemento de matriz
+
+    var company = ["Nutresa", "Arus", "Sura"];
+    company[1] = "Arus Tecnologia";
+    document.getElementById("demo2").innerHTML = "Se cambia la array Arus por <b>" + company[1] + "</b>";
+
+
+    // Los objetos usan nombres para acceder a sus "miembros". 
+
+    var datos = { nombre: "Juan Camilo", apellido: "Garcia" };
+    document.getElementById("demo3").innerHTML = "El elemento de la arry es <b>" + datos["nombre"] + " " + datos["apellido"] + "</b>";
+
+
+    //La propiedad de longitud
+    var parametros = ["parameter1", "parameter2", "parameter3"];
+    document.getElementById("demo4").innerHTML = "El # de propiedades es <b>" + parametros.length + "</b>";
+
+    //Accediendo al primer elemento de matriz
+
+    var hardware = ["mouse", "ram", "dd"];
+    var hw = hardware[1];
+    document.getElementById("demo5").innerHTML = "El 1er elemento de la matriz es <b>" + hw + "</b>";
+
+    //Accediendo al último elemento de matriz
+
+    var software = ["office", "skype", "Spark"];
+    var sw = software[software.length - 2];
+    document.getElementById("demo6").innerHTML = "El ultimo elemento de la matriz es <b>" + sw + "</b>";
+
+    //  Elementos de matriz de bucle
+
+    var int, acceso;
+    var int = ["Mecanismo", "Sistema", "Procesador"];
+
+    acceso = "<ul>";
+    int.forEach(bucle);
+    acceso += "</ul>";
+
+    document.getElementById("demo8").innerHTML = acceso;
+
+    function bucle(value) {
+        acceso += "<li type='square'>" + value + "</li>";
+    }
+
+    // Adding Array Elements 
+    //El nuevo elemento también se puede agregar a una matriz usando la propiedad length: ruits[fruits.length] = "NARANJA";
+
+    var fruits = ["Pera", "Manzana", "Mango"];
+    document.getElementById("demo9").innerHTML = "Las frutas son: <b>" + fruits + "</b>";
+
+    function array() {
+        fruits.push("NARANJA");
+        document.getElementById("demo9").innerHTML = "Las frutas son: <b>" + fruits + "</b>";
+    }
+
+
+    var points = [89, 70, 65, 98];
+    document.getElementById("demo10").innerHTML = "La poscion 2 corresponde al numero <b>" + points[2] + "</b>";
+
+
+
+
+</script>
+
+</html>

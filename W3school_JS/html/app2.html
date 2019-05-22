@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <h1>My First JavaScript</h1>
+    <p id="identificadores"></p>
+    <p id="variables"></p>
+    <p id="variables2"></p>
+    <p id="variables3"></p>
+    <p id="variables4"></p>
+    <p id="variables5"></p>
+    <p id="variables6"></p>
+    <p id="variables7"></p>
+    <p id="operadores1"></p>
+    <p id="operadores2"></p>
+    <p id="operadores3"></p>
+    <p id="aritmetica4"></p>
+    <p id="aritmetica5"></p>
+    <p id="aritmetica6"></p>
+    <p id="aritmetica7"></p>
+    <p id="tdatos1"></p>
+    <p id="tdatos2"></p>
+</body>
+<script>
+        var Name, Apellido;
+        Name = "Juan Camilo";
+        Apellido = "Garcia Hurtado";
+        document.getElementById("identificadores").innerHTML = Name + " " + Apellido
+
+        var x = 5;
+        var y = 2;
+        var z = x + y;
+        document.getElementById("variables").innerHTML = "El valor de de la varible z es" + " " + z;
+
+        var price1 = 5;
+        var price2 = 6;
+        var total = price1 + price2;
+        document.getElementById("variables2").innerHTML = "El total es:" + total;
+
+        var Marca = "Dell",
+            Modelo = "lmn898",
+            serial = "prueba";
+        document.getElementById("variables3").innerHTML = Marca;
+
+        var nombre_persona = "Daniel", apellido = "Lopez", ciudad = "Medellin";
+        document.getElementById("variables4").innerHTML = ciudad;
+
+        var Indefinido;
+        document.getElementById("variables5").innerHTML = Indefinido;
+
+        var x = 5 * 2 * 2;
+        document.getElementById("variables6").innerHTML = "El total de la variable es" + " " + x;
+
+        var x = "prueba" + " " + "de" + " " + " " + "sonido";
+        document.getElementById("variables7").innerHTML = "La oracion completa es," + " " + x;
+
+        var x = 5;
+        x *= 5;
+        document.getElementById("operadores1").innerHTML = "El total de la multiplicacion es" + " " + x;
+
+        Marca = "Mazda";
+        Marca += " " + "Nuevo";
+        document.getElementById("operadores2").innerHTML = Marca;
+
+        var x = 5 + 5;
+        var y = "5" + 5;
+        var z = "Hello" + " " + 5;
+        document.getElementById("operadores3").innerHTML = x + " " + y + " " + z;
+
+        var x = 12;
+        var y = 5;
+        var z = x % y;
+        document.getElementById("aritmetica4").innerHTML = "El modulo es" + " " + z;
+
+        var x = 9;
+        x--;
+        var z = x;
+        document.getElementById("aritmetica5").innerHTML = "El decremento es" + " " + z;
+
+        var x = 6;
+        document.getElementById("aritmetica6").innerHTML = "La exponenciación  es" + " " + x ** 2;
+
+        var x = 7;
+        document.getElementById("aritmetica7").innerHTML = "La exponenciación  es, " + Math.pow(x, 2);
+
+        var x1 = 12.00;
+        var x2 = 34;
+        var x3 = 3.14;
+        document.getElementById("tdatos1").innerHTML = "Los datos son" + "<br>" + x1 + "<br>" + x2 + "<br>" + x3;
+
+        var x = 5;
+        var y = 6;
+        var z = 6;
+        document.getElementById("tdatos2").innerHTML = "El 1er tipo de dato booleans es " +
+            (x == y) +
+            " ," +
+            "El 2do tipo de dato booleans es " + (y == z);
+
+    </script>
+
+</html>
