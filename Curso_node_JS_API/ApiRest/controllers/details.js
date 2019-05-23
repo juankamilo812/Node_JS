@@ -11,30 +11,45 @@ class Details extends Model {
     async InsertarProductos() {
         try {
 
+            let insert;
+            this.id_producto.forEach((e, i) => {
+                if (i == 0) {
+                    insert = `('${this.id_pedido}','${e}')`
+                } else {
+                    insert = `
+                    ${insert},
+                    ('${this.id_pedido}','${e}')`
+                }
+            });
+
             let result =
                 await Mysql.executeQuery(`
                     INSERT INTO orders_details 
                     (id_order,id_product)
                     values
-                    ('${this.id_pedido}','${this.id_producto}')
+                    ${insert}
             `);
             if (!result.status) {
-            
-                
                 return {
                     status: false,
-                    message: `No se ha podido agregar el producto. ${this.id_producto}`
+                    message: 'No se ha podido agregar el pedido con los productos.'
                 }
             }
             return {
                 status: true,
-                message: 'Se ha agregado el producto de forma exitosa.'
+                message: 'Se ha agregado el pedido con los productos de forma exitosa.'
             };
         } catch (error) {
-            // Util.writeLogError(error);
+
             return {
                 status: false,
                 message: error
+                //     return result;
+                // } catch (error) {
+                //     // Util.writeLogError(error);
+                //     return {
+                //         status: false,
+                //         message: error
             };
         }
     }
