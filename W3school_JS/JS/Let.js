@@ -53,8 +53,11 @@
 
 //Using let in a loop:
 //using let, the variable declared in the loop does not redeclare the variable outside the loop.
+
 // let i = 5;
 // for (let i = 0; i < 10; i++) {
 //   // some statements
+
 // }
 // console.log(i);
+
