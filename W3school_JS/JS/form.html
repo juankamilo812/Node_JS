@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS FORMS</title>
+</head>
+<h1>JS Forms</h1>
+
+
+<body>
+
+  <!-- JavaScript Forms-->
+
+  <form name="myForm" action="/D:\" onsubmit="return validateForm()" method="post">
+    Name: <input type="text" name="fname">
+    <input type="submit" value="Submit">
+  </form>
+ 
+  <br> </br>
+
+  <!-- The checkValidity() Method-->
+  <p><b>If the number is greater than 100 (the input's max attribute),
+      an error message will be displayed.</b></p>
+
+  Validador: <input id="id1" type="number" min="100" max="300" required>
+  <button onclick="myFunction()">OK</button>
+  <p id="demo"></p>
+  <!-- The rangeUnderflow Property-->
+
+  <p><b>If the number in an input field is less than 100 (the input's min attribute),
+      display a message:</b></p>
+
+  Validador 2: <input id="id1" type="number" min="100">
+  <button onclick="myFunction1()">OK</button>
+  <p id="demo2"></p>
+  
+</body>
+
+
+<script>
+  // JavaScript Forms
+
+  function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+      alert("Por favor diligenciar la informacion");
+      return false;
+    }
+  }
+
+  //  <!-- The checkValidity() Method-->
+  function myFunction() {
+    var inpObj = document.getElementById("id1");
+    if (!inpObj.checkValidity()) {
+      document.getElementById("demo").innerHTML = inpObj.validationMessage;
+    } else {
+      document.getElementById("demo").innerHTML = "Input OK";
+    }
+  }
+
+  //The rangeUnderflow Property
+  function myFunction1() {
+  var txt = "";
+  if (document.getElementById("id1").validity.rangeUnderflow) {
+    txt = "Value too small";
+  } else {
+    txt = "Input OK";
+  } 
+  document.getElementById("demo2").innerHTML = txt;
+}
+
+</script>
+
+</html>
