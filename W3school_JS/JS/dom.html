@@ -186,12 +186,80 @@ Verde</div>-->
     <!-- <h1 id="id01">test</h1>
     <p id="id02"></p> -->
 
-  
-    
-    <div>
+
+
+    <!-- <div>
             <p>The DOM is very useful!</p>
             <p>This example demonstrates the <b>document.body</b> property.</p>
-            </div>
+            </div> -->
+
+    <!-- <h1 id="id01">My First Page</h1>
+    <p id="id02"></p> -->
+
+    <!-- <h1 id="id01">My First Page</h1>
+    <p id="id02"></p> -->
+
+    <!-- <div id="div1">
+            <p id="p1">This is a paragraph.</p>
+            <p id="p2">This is another paragraph.</p>
+            <p id="p3">This juan.</p>
+            </div> -->
+
+    <!-- <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div> -->
+    <!-- 
+    <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div> -->
+
+    <!-- <div id="div1">
+        <p id="p1">holis.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div> -->
+
+    <!-- <p>Hello World!</p>
+
+    <p>Hello Norway!</p>
+
+    <p id="demo"></p> -->
+
+    <!-- <p>Hello World!</p>
+
+    <p>Hello Norway!</p>
+
+    <p id="demo"></p> -->
+
+    <!-- <p>Hello World!</p>
+
+    <p>Hello Norway!</p>
+
+    <p>Click the button to change the color of all p elements.</p>
+
+    <button onclick="myFunction()">Try it</button> -->
+
+    <!-- <p>Hello World!</p>
+
+    <p>Hello Norway!</p>
+
+    <p id="demo"></p> -->
+
+    <!-- <p>Hellow World!</p>
+
+    <p>Hellow Norway!</p>
+
+    <p id="demo"></p> -->
+
+<!-- 
+    <p>Hello World!</p>
+
+    <p>Hello Norway!</p>
+
+    <p>Click the button to change the color of all p elements.</p>
+
+    <button onclick="myFunction()">Try it</button> -->
 
     <script>
         // //dom
@@ -421,7 +489,82 @@ Verde</div>-->
 
         // document.getElementById("id02").innerHTML = document.getElementById("id01").childNodes[0].nodeValue;
 
-        alert(document.body.innerHTML);
+        // alert(document.body.innerHTML);
+
+        // document.getElementById("id02").innerHTML = document.getElementById("id01").nodeName;
+
+        // document.getElementById("id02").innerHTML = document.getElementById("id01").nodeType;
+
+        //Creating New HTML Elements (Nodes)
+
+        // var para = document.createElement("p");
+        // var node = document.createTextNode("This is new.");
+        // para.appendChild(node);
+        // var element = document.getElementById("div1");
+        // element.appendChild(para);
+
+        //Creating new HTML Elements - insertBefore()
+
+        // var para = document.createElement("p");
+        // var node = document.createTextNode("This is new.");
+        // para.appendChild(node);
+        // var element = document.getElementById("div1");
+        // var child = document.getElementById("p1");
+        // element.insertBefore(para, child);
+
+        //Removing Existing HTML Elements
+        // var parent = document.getElementById("div1");
+        // var child = document.getElementById("p2");
+        // parent.removeChild(child);
+
+        //Replacing HTML Elements 
+
+        // var parent = document.getElementById("div1");
+        // var child = document.getElementById("p1");
+        // var para = document.createElement("p");
+        // var node = document.createTextNode("This is new.");
+        // para.appendChild(node);
+        // parent.replaceChild(para, child);
+
+        //The HTMLCollection Object
+        // var myCollection = document.getElementsByTagName("p");
+        // document.getElementById("demo").innerHTML =
+        //     "The innerHTML of the second paragraph is: " +
+        //     myCollection[1].innerHTML;
+
+        //HTML HTMLCollection Length
+
+        // var myCollection = document.getElementsByTagName("p");
+        // document.getElementById("demo").innerHTML =
+        //     "This document contains " + myCollection.length + " paragraphs.";
+
+        // function myFunction() {
+        //     var myCollection = document.getElementsByTagName("p");
+        //     var i;
+        //     for (i = 0; i < myCollection.length; i++) {
+        //         myCollection[i].style.color = "green";
+        //     }
+        // }
+
+        //The HTML DOM NodeList Object
+
+        // var myNodelist = document.querySelectorAll("p");
+        // document.getElementById("demo").innerHTML =
+        //     "The innerHTML of the second paragraph is: " +
+        //     myNodelist[1].innerHTML;
+
+        //HTML DOM Node List Length
+        // var myNodelist = document.querySelectorAll("p");
+        // document.getElementById("demo").innerHTML =
+        //     "This document contains " + myNodelist.length + " paragraphs.";
+
+        // function myFunction() {
+        //     var myNodelist = document.querySelectorAll("p");
+        //     var i;
+        //     for (i = 0; i < myNodelist.length; i++) {
+        //         myNodelist[i].style.color = "red";
+        //     }
+        // }
 
     </script>
 
