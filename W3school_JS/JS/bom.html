@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bom</title>
+</head>
+
+<body onload="checkCookie()"> 
+    <h1>JavaScript Window - The Browser Object Model</h1>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <input type="button" value="Load new document" onclick="newDoc()"> <br><br>
+    <input type="button" value="Back" onclick="goBack()"><br><br>
+    <input type="button" value="Forward" onclick="goForward()">
+    <p id="demo13"></p>
+    <p id="demo14"></p>
+    <p id="demo15"></p>
+    <p id="demo16"></p>
+    <p id="demo17"></p>
+    <p id="demo18"></p>
+    <p id="demo19"></p>
+    <p id="demo20"></p>
+    <p id="demo21"></p>
+    <p id="demo22"></p>
+    <button onclick="myFunction()">Popup Boxes</button><br><br>
+    <button onclick="myFunction1()">Confirm Box</button><br><br>
+    <button onclick="myFunction2()">Prompt Box</button>
+    <p id="demo23"></p>
+    <p id="demo24"></p>
+    <!-- Line Breaks -->
+    <button onclick="alert('Hello\nHow are you?')">Line Breaks</button><br><br>
+    <button onclick="setTimeout(myFunction3, 1000);">Try it</button><br><br>
+    <button onclick="myVar = setTimeout(myFunction4, 3000)">presionar</button><br><br>
+    <button onclick="clearTimeout(myVar)">Stop it</button>
+    <p id="demo25"></p>
+    <button onclick="clearInterval(myVar1)">Stop time</button>
+    <p id="demo26"></p>
+    
+
+
+</body>
+
+<script>
+    // Both properties return the sizes in pixels:
+    // window.innerHeight - the inner height of the browser window (in pixels)
+    // window.innerWidth - the inner width of the browser window (in pixels)
+
+    var w = window.innerWidth
+        || document.documentElement.clientWidth
+        || document.body.clientWidth;
+
+    var h = window.innerHeight
+        || document.documentElement.clientHeight
+        || document.body.clientHeight;
+
+    var x = document.getElementById("demo");
+    x.innerHTML = "Browser inner window width: " + w + ", height: " + h + ".";
+
+    //Window Screen Width
+
+    document.getElementById("demo1").innerHTML =
+        "Screen width is " + screen.width;
+
+    //Window Screen Height
+    document.getElementById("demo3").innerHTML =
+        "Screen height is " + screen.height;
+
+    //Window Screen Available Width
+
+    document.getElementById("demo4").innerHTML =
+        "Available screen width is " + screen.availWidth;
+
+    //Window Screen Available Height
+
+    document.getElementById("demo5").innerHTML =
+        "Available screen height is " + screen.availHeight;
+
+    //Window Screen Color Depth
+    document.getElementById("demo6").innerHTML =
+        "Screen color depth is " + screen.colorDepth;
+
+    //Window Screen Pixel Depth
+    document.getElementById("demo7").innerHTML =
+        "Screen pixel depth is " + screen.pixelDepth;
+
+    //Window Location Href
+
+    document.getElementById("demo8").innerHTML =
+        "The full URL of this page is:<br>" + window.location.href;
+
+    //Window Location Hostname
+
+    document.getElementById("demo9").innerHTML =
+        "Page hostname is: " + window.location.hostname;
+
+    //Window Location Pathname
+    document.getElementById("demo10").innerHTML =
+        "Page path is: " + window.location.pathname;
+
+    //Window Location Protocol
+    document.getElementById("demo11").innerHTML =
+        "The page protocol is: " + window.location.protocol;
+
+    //Window Location Port
+    document.getElementById("demo12").innerHTML =
+        "The URL port number of the current page is: " + window.location.port;
+
+    //Window Location Assign
+
+    function newDoc() {
+        window.location.assign("https://www.google.com")
+    }
+
+    //Window History Back
+
+    function goBack() {
+        window.history.back()
+
+    }
+
+    //Window History Forward
+    function goForward() {
+        window.history.forward()
+    }
+
+    //Browser Cookies
+    document.getElementById("demo13").innerHTML =
+        "navigator.cookieEnabled is " + navigator.cookieEnabled;
+
+    //Browser Application Name
+    document.getElementById("demo14").innerHTML =
+        "navigator.appName is " + navigator.appName;
+
+    //Browser Application Code Name
+    document.getElementById("demo15").innerHTML =
+        "navigator.appCodeName is " + navigator.appCodeName;
+
+    //The Browser Engine
+    document.getElementById("demo16").innerHTML =
+        "navigator.product is " + navigator.product;
+
+    //The Browser Version
+    document.getElementById("demo17").innerHTML = navigator.appVersion;
+
+    //The Browser Agent
+    document.getElementById("demo18").innerHTML =
+        navigator.userAgent;
+
+    //The Browser Platform
+    document.getElementById("demo19").innerHTML =
+        "navigator.platform is " + navigator.platform;
+
+    //The Browser Language
+    document.getElementById("demo20").innerHTML =
+        "navigator.language is " + navigator.language;
+
+    //Is The Browser Online?
+    document.getElementById("demo21").innerHTML =
+        "navigator.onLine is " + navigator.onLine;
+
+    //Is Java Enabled?
+    document.getElementById("demo22").innerHTML =
+        "javaEnabled is " + navigator.javaEnabled();
+
+    //JavaScript Popup Boxes
+    //Alert Box
+    function myFunction() {
+        alert("I am an alert box!");
+    }
+
+    //Confirm Box
+
+    function myFunction1() {
+        var txt;
+        if (confirm("Press a button!")) {
+            txt = "You pressed OK!";
+        } else {
+            txt = "You pressed Cancel!";
+        }
+        document.getElementById("demo23").innerHTML = txt;
+    }
+
+    //Prompt Box
+
+    function myFunction2() {
+        var txt;
+        var person = prompt("Please enter your name:", "Harry Potter");
+        if (person == null || person == "") {
+            txt = "User cancelled the prompt.";
+        } else {
+            txt = "Hello " + person + "! How are you today?";
+        }
+        document.getElementById("demo24").innerHTML = txt;
+    }
+
+    //The setTimeout() Method
+
+    function myFunction3() {
+        alert('Hello');
+    }
+
+    //How to Stop the Execution?
+    function myFunction4() {
+        alert("Hello");
+    }
+
+
+//The setInterval() Method
+var myVar = setInterval(myTimer, 1000);
+
+function myTimer() {
+  var d = new Date();
+  document.getElementById("demo25").innerHTML = d.toLocaleTimeString();
+}
+
+//How to Stop the Execution?
+var myVar1 = setInterval(myTimer1 ,1000);
+function myTimer1() {
+  var d = new Date();
+  document.getElementById("demo26").innerHTML = d.toLocaleTimeString();
+}
+
+
+function setCookie(cname,cvalue,exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+//All Together Now
+function checkCookie() {
+  var user=getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+}
+
+</script>
+
+</html>
