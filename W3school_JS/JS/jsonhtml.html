@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json_html</title>
+</head>
+
+<body>
+
+    <h1>JSON HTML</h1>
+    <p id="demo"></p>
+    <select id="myselect" onchange="change_myselect(this.value)">
+        <option value="">Choose an option:</option>
+        <option value="customers">Customers</option>
+        <option value="products">Products</option>
+        <option value="suppliers">Suppliers</option>
+    </select>
+    <p id="demo3"></p>
+
+    <script>
+
+        // HTML Table
+        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+        obj = { table: "customers", limit: 20 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText);
+                txt += "<table border='1'>"
+                for (x in myObj) {
+                    txt += "<tr><td>" + myObj[x].name + "</td></tr>";
+                }
+                txt += "</table>"
+                document.getElementById("demo").innerHTML = txt;
+            }
+        };
+        xmlhttp.open("POST", "json_demo_db_post.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("x=" + dbParam);
+        //Dynamic HTML Table
+
+        function change_myselect(sel) {
+            var obj, dbParam, xmlhttp, myObj, x, txt = "";
+            obj = { table: sel, limit: 20 };
+            dbParam = JSON.stringify(obj);
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    myObj = JSON.parse(this.responseText);
+                    txt += "<table border='1'>"
+                    for (x in myObj) {
+                        txt += "<tr><td>" + myObj[x].name + "</td></tr>";
+                    }
+                    txt += "</table>"
+                    document.getElementById("demo1").innerHTML = txt;
+                }
+            };
+            xmlhttp.open("POST", "json_demo_db_post.php", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send("x=" + dbParam);
+        }
+
+        //HTML Drop Down List
+
+        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+        obj = { table: "customers", limit: 20 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText);
+                txt += "<select>"
+                for (x in myObj) {
+                    txt += "<option>" + myObj[x].name;
+                }
+                txt += "</select>"
+                document.getElementById("demo3").innerHTML = txt;
+            }
+        };
+        xmlhttp.open("POST", "json_demo_db_post.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("x=" + dbParam);
+
+    </script>
+</body>
+
+</html>
