@@ -1,4 +1,4 @@
-<!-- The PHP File -->
+The PHP File
 <?php
 $myObj->name = "John";
 $myObj->age = 30;

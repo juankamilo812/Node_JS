@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Finding HTML Elements by Id</h2>
+    <p id="id01">Hello World!</p>
+    <p id="id02">Hello Sweden!</p>
+    <p id="id03">Hello Japan!</p>
+    <p class="intro">Hello people!</p>
+    <p class="intro">Hello brother!</p>
+    <p class="intro">Hello sister!</p>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="01">Arus</p>
+    <p id="02">Evolucion</p>
+    <div id="11">
+        <h2>Hello World!</h2>
+    </div>
+    <div id="12">
+        <h2>Hello Sweden!</h2>
+    </div>
+
+    <h2 id="21">Hello World!</h2>
+    <h2 id="22">Hello Sweden!</h2>
+    <h2 id="23">Hello Japan!</h2>
+    <h2 id="32" style="display:none">Showing HTML</h2>
+    <h2 id="33" style="display:none">Showing Japan!</h2>
+    <p id="lol">JavaScript can change the style of an HTML element.</p>
+    <p id="lol1">JavaScript.</p>
+    <h2 id="id012">Hello World!</h2>
+    <h2 id="id022">Hello Sweden!</h2>
+    <h2 id="42">Getting Parent HTML Element</h2>
+    <p id="lol3"></p>
+    <h1>Getting Parent HTML Element</h1>
+    <script>
+
+        //Finding HTML Element by Id  jQuery
+        $(document).ready(function () {
+            var myElements = $("#id01");
+            $("#demo").text("The text from the id01 paragraph is: " + myElements[0].innerHTML);
+        });
+
+        //Finding HTML Elements by Id javascript
+        var myElement = document.getElementById("id03");
+        document.getElementById("demo1").innerHTML = "The text from the id01 paragraph is: " + myElement.innerHTML;
+
+        //Finding HTML Elements by Tag Name jQuery
+        $(document).ready(function () {
+            var myElements = $("p");
+            $("#demo2").text("The text in the first paragraph is: " + myElements[1].innerHTML);
+        });
+
+        //Finding HTML Elements by Tag Name javascript
+        var myElements = document.getElementsByTagName("p");
+        document.getElementById("demo3").innerHTML = "The text in the first paragraph is: " + myElements[1].innerHTML;
+
+
+        //Finding HTML Elements by Class Name jQuery
+        $(document).ready(function () {
+            var myElements = $(".intro");
+            $("#demo4").text("The first paragraph with class='intro' is: " + myElements[2].innerHTML);
+        });
+
+        //Finding HTML Elements by Class Name javascript
+        var myElements = document.getElementsByClassName("intro");
+        document.getElementById("demo5").innerHTML = "The first paragraph with class='intro' is: " + myElements[1].innerHTML;
+
+        //Finding HTML Elements by CSS Selectors jQuery
+        $(document).ready(function () {
+            var myElements = $("p.intro");
+            $("#demo6").text("The  paragraph with class='intro' is: " + myElements[0].innerHTML);
+        });
+
+        var myElements = document.querySelectorAll("p.intro");
+        document.getElementById("demo7").innerHTML =
+            "The first paragraph with class='intro' is: " + myElements[2].innerHTML;
+
+        //Set Text Content
+        //jQuery
+        $(document).ready(function () {
+            var myElement = $("#01");
+            myElement.text("test!");
+        });
+
+        //javascript
+        var myElement = document.getElementById("02");
+        myElement.textContent = "dark!";
+
+        //Get HTML Text Content
+        //jQuery
+        $(document).ready(function () {
+            var content = $("#12").html();
+            $("#11").html(content);
+        });
+        //javascript
+        var content = document.getElementById("12").innerHTML;
+        document.getElementById("11").innerHTML = content;
+
+        //Hiding HTML Elements
+        //jQuery
+        $(document).ready(function () {
+            var myElement = $("#21");
+            myElement.hide();
+        });
+
+        //javascript
+        document.getElementById("22").style.display = "none";
+
+        //Showing HTML Elements 
+
+        //jQuery
+        $(document).ready(function () {
+            var myElement = $("#32");
+            myElement.show();
+        });
+
+        //JavaScript
+        var myElement = document.getElementById("33");
+        myElement.style.display = "";
+
+        //Styling HTML Elements
+        //jQuery
+        $(document).ready(function () {
+            var myElement = $("#lol");
+            myElement.css("font-size", "30px");
+        });
+
+        //JavaScript
+        var myElement = document.getElementById("lol1");
+        myElement.style.fontSize = "25px";
+
+        //Removing Elements
+        //jQuery
+        $(document).ready(function () {
+            $("#id12").remove();
+        });
+
+        //JavaScript
+        var element = document.getElementById("id22");
+        element.parentNode.removeChild(element);
+
+        //jQuery
+        $(document).ready(function () {
+            var myParent = $("#42").parent();
+            $("#lol3").text(myParent.prop("nodeName"));
+        });
+        //JavaScript
+        var myParent = document.getElementById("02").parentNode;
+        document.getElementById("demo").innerHTML = myParent.nodeName;
+        
+    </script>
+</body>
+
+</html>
