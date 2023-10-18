@@ -1,3 +1,8 @@
+variable "aws_region" {
+  type        = string
+  default = "us-east-1"
+}
+
 variable  "var1" {
   type = string
   default = "hola"
@@ -26,3 +31,4 @@ variable "list2" {
   type = list
   default = ["a", 15, true, 2]
 }
+
