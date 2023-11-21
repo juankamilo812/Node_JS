@@ -1,3 +1,3 @@
-output "bucket_id" {
-  value = aws_s3_bucket.curso_terraform
-}
+# output "bucket_id" {
+#   value = aws_s3_bucket.curso_terraform
+# }
